@@ -1,0 +1,44 @@
+@import "framework/variables";
+
+.page-intro.hero {
+    background:url('/images/big-sur.jpg') 50% 60%;
+    background-size:cover;
+    min-height:40vw;
+    padding:calc(4rem + 4vw) 0;
+    .content {
+        justify-content: center;
+        align-items: center;
+        .logo-type {
+            width:100%;
+            max-width:1200px;
+        }
+        .subtitle {
+            font-size:0.75em;
+            font-weight:700;
+            text-transform: uppercase;
+            letter-spacing:0.2em;
+            margin:0 0 2rem 0;
+            text-align:center;
+        }
+    }
+}
+.home-body {
+    padding:7rem 0 4rem 0;
+    .content {
+        align-items:flex-start;
+        max-width:$paragraphWidth;
+        .logo-icon {
+            width:7vw;
+            margin-bottom:5vw;
+        }
+    }
+    @media screen and (min-width:$medium) {
+        align-items: center;
+        .content {
+            align-items: center;
+            p {
+                text-align:center;
+            }
+        }
+    }
+}

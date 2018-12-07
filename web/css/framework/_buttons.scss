@@ -1,0 +1,86 @@
+a {
+    text-decoration:underline;
+    color:$foreground;
+    transition:color 0.2s;
+    &.invert {
+        color:$background;
+    }
+    &:hover {
+        color:$highlight;
+        &.basic {
+            color:$background;
+            &.invert {
+                color:$foreground;
+            }
+        }
+    }
+    &.naked {
+        text-decoration: none;
+    }
+    &.button {
+        position:relative;
+        display:inline-block;
+        font-size:0.8em;
+        font-weight:700;
+        text-decoration: none;
+        box-sizing: border-box;
+        padding:0.6rem 0.8rem;
+        border-radius: 2px;
+        transition:color 0.2s, background-color 0.2s;
+        z-index:1;
+        .icon { margin-right: 0.5rem; font-size:0.8rem; }
+        &:nth-child(2) {
+            margin-left:0.5rem;
+        }
+        &.primary {
+            background-image: linear-gradient(45deg, $hlshiftEnd, $hlshiftStart);
+            color: $light;
+            &:before {
+                border-radius: inherit;
+                background-image: linear-gradient(45deg, lighten($hlshiftEnd, 10), lighten($hlshiftStart, 10));
+                content: '';
+                display: block;
+                height: 100%;
+                position: absolute;
+                top: 0; left: 0;
+                opacity: 0;
+                width: 100%;
+                z-index: -100;
+                transition:opacity 0.3s;
+            }
+            &:nth-child(even) {
+                background-image: linear-gradient(-45deg, $hlshiftEnd, $hlshiftStart);
+                &:before {
+                    background-image: linear-gradient(-45deg, lighten($hlshiftEnd, 10), lighten($hlshiftStart, 10));
+                }
+            }
+        }
+        &.dark { background-color: rgba($dark,0.8); color: $light;}
+        &.light { background-color: rgba($light,0.8); color: $dark;}
+        &:hover {
+            &.primary {
+                &:before {
+                    opacity:1;
+                }
+            }
+            &.dark { background-color: $dark; color: $light;}
+            &.light { background-color: $light; color: $dark;}
+        }
+        &.invert-sm {
+            @media screen and (min-width: $small) {
+                &.dark {
+                    background-color:$light; color:$dark;
+                    &:hover {
+                        background-color:$dark; color:$light;
+                    }
+                }
+                &.light {
+                    background-color:$dark; color:$light;
+                    &:hover {
+                        background-color:$light; color:$dark;
+                    }
+                }
+            }
+        }
+    }
+}

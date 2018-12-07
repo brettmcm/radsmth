@@ -1,0 +1,25 @@
+.network-overview .content .visual {
+  width: 100%;
+  align-self: stretch; }
+  .network-overview .content .visual img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    max-height: 90vw;
+    object-fit: cover;
+    margin-bottom: 1rem; }
+  @media screen and (min-width: 768px) {
+    .network-overview .content .visual {
+      width: 40%; }
+      .network-overview .content .visual img {
+        max-height: 85vh;
+        margin-bottom: 0; } }
+.network-overview .content .copy {
+  width: 100%; }
+  .network-overview .content .copy .button {
+    margin-top: 2rem; }
+  @media screen and (min-width: 768px) {
+    .network-overview .content .copy {
+      width: 50%; } }
+
+/*# sourceMappingURL=services.css.map */

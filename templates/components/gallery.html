@@ -1,0 +1,18 @@
+{% do view.registerCssFile("/css/components/gallery.css") %}
+
+{% block blockContent %}
+    <section class="body gallery count-{{block.images|length}}">
+
+        {% for image in block.images.all() %}
+
+            <div class="item">
+                <img src="{{ image.url }}" class="hero-image {% if image.squareOnMobile %}crop-square{% endif %}">
+                {% if image.caption is defined and image.caption is not empty %}
+                    <p class="caption">{{image.caption}}</p>
+                {% endif %}
+            </div>
+
+        {% endfor %}
+
+    </section>
+{% endblock %}

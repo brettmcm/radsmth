@@ -1,0 +1,5 @@
+/.env
+/.idea
+/vendor
+/web/auth
+.DS_Store

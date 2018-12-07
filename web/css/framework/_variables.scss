@@ -1,0 +1,34 @@
+$light: #fff;
+$dark: #111;
+
+// default
+$background: $light;
+$foreground: $dark;
+
+// invert
+// $background: $dark;
+// $foreground: $light;
+
+$highlight: #de2e00;
+// $highlight: #de0020;
+$hlshiftStart: adjust-hue( $highlight, -10% );
+$hlshiftEnd: adjust-hue( $highlight, 10% );
+
+$scaleableWidth: 90vw;
+$contentWidth: 1440px;
+$contentWidthSmall: 1000px;
+$paragraphWidth: 800px;
+
+$easing: cubic-bezier(0.46,0,0.34,1);
+
+// Grid breakpoints
+$small: 414px;
+$medium: 768px;
+$large: 1024px;
+$xlarge: 1440px;
+
+// Fluid type settings
+$min_width: 400px;
+$max_width: 1440px;
+$min_font: 16px;
+$max_font: 21px;

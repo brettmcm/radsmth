@@ -1,0 +1,30 @@
+.grid {
+    position:relative;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width:$scaleableWidth;
+    max-width:$contentWidth;
+
+    .grid-item {
+        position:relative;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        padding-bottom:100%;
+        margin-bottom:1rem;
+        background:rgba($foreground,0.03);
+        box-sizing: border-box;
+        @media screen and (min-width:$medium) {
+            padding-bottom:calc(51% - 1rem);
+            width:calc(50% - 0.5rem);
+            margin-right:1rem;
+            &:nth-child(2n) {
+                margin-right:0;
+            }
+        }
+    }
+
+}

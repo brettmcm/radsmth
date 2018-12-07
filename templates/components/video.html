@@ -1,0 +1,18 @@
+{% do view.registerCssFile("/css/components/video.css") %}
+
+{% block blockContent %}
+    <section class="body video">
+
+        {% if block.video is defined and block.video is not empty %}
+            {% set video = block.video.one().url %}
+        {% endif %}
+        {% if block.poster is defined and block.poster is not empty %}
+            {% set poster = block.poster.one().url %}
+        {% endif %}
+        <video controls poster="{{poster}}">
+            <source src="{{video}}" type="video/mp4">
+            <source src="{{video|replace({'mp4': 'webm'})}}" type="video/webm">
+        </video>
+
+    </section>
+{% endblock %}

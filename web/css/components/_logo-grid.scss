@@ -1,0 +1,30 @@
+.grid.logos {
+    box-sizing: border-box;
+    padding:1rem 0;
+    .grid-item {
+        img {
+            position:absolute;
+            top:15%;
+            left:15%;
+            width:70%;
+            height:70%;
+            object-fit: contain;
+            pointer-events: none;
+            @if lightness($background) < 50 {
+                filter: brightness(10);
+            } @else {
+                filter: brightness(1);
+            }
+        }
+    }
+    @media screen and (min-width:$large) {
+        .grid-item {
+            width:calc(33.33% - 0.75rem);
+            padding-bottom:calc(33.5% - 1rem);
+            margin-right:1rem;
+            &:nth-child(3n) {
+                margin-right:0;
+            }
+        }
+    }
+}

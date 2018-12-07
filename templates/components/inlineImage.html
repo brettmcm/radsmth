@@ -1,0 +1,25 @@
+{% do view.registerCssFile("/css/components/inlineimage.css") %}
+
+{% block blockContent %}
+    <section class="body inline-image {{block.position}}">
+
+        <div class="image">
+            {% if block.image.one().kind == 'image' %}
+                <img src="{{ block.image.one().url }}">
+            {% elseif block.image.one().kind == 'video' %}
+                <video muted autoplay loop>
+                    <source src="{{ block.image.one().url }}" type="video/mp4">
+                    <source src="{{ block.image.one().url|replace({'mp4': 'webm'}) }}" type="video/webm">
+                </video>
+            {% else %}
+                Nothing
+            {% endif %}
+
+            {% if block.image.one().caption is defined and block.image.one().caption is not empty %}
+                <p class="caption">{{block.image.one().caption}}</p>
+            {% endif %}
+        </div>
+        <h4>{{block.text}}</h4>
+
+    </section>
+{% endblock %}

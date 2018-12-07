@@ -1,0 +1,54 @@
+{% do view.registerCssFile("/css/pages/services.css") %}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "inverted" : false } %}
+
+<section class="page-intro">
+    <div class="content">
+
+        <h1>{{entry.title}}</h1>
+        <div class="break small"></div>
+        {{entry.body}}
+
+    </div>
+</section>
+
+<section class="grid services">
+
+    {% for service in entry.topics.all() %}
+        <div class="grid-item">
+            <h3>{{service.headline}}</h3>
+            <p class="caption">{{service.subhead}}</p>
+            <div class="break xsmall"></div>
+            <p>{{service.description}}</p>
+        </div>
+    {% endfor %}
+
+</section>
+
+
+<section class="overview network-overview">
+    <div class="content">
+
+
+        <div class="visual">
+            <img src="/images/network.jpg">
+        </div>
+        <div class="copy">
+            <p class="caption">The Radsmth creative collective</p>
+            <h2>If we can't, we know who can</h2>
+            <p>Working with Radsmth gets you turnkey access to a decentralized network of creatives. Over the years working on local and global marketing campaigns, we've made all kinds of connections to independant creatives across a wide range of disceplines.</p>
+            <p>By handling the project management all through Radsmth, you can get access to many more service vendors at an in-network cost that gives you a simple workflow and minimal overhead.</p>
+            <a href="mailto:brett@radsmth.com?subject=Let's make something rad!" class="button dark">Ask Us More</a>
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% do view.registerJsFile("/js/app.js") %}

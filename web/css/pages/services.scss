@@ -1,0 +1,35 @@
+@import "framework/variables";
+
+.network-overview {
+    .content {
+        .visual {
+            width:100%;
+            align-self: stretch;
+            img {
+                width:100%;
+                height:auto;
+                min-height:100%;
+                max-height:90vw;
+                object-fit: cover;
+                margin-bottom:1rem;
+            }
+            @media screen and (min-width:$medium) {
+                width:40%;
+                img {
+                    max-height:85vh;
+                    margin-bottom:0;
+                }
+            }
+        }
+        .copy {
+            width:100%;
+            .button {
+                margin-top:2rem;
+            }
+            @media screen and (min-width:$medium) {
+                width:50%;
+            }
+        }
+    }
+
+}

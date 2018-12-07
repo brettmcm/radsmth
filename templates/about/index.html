@@ -1,0 +1,107 @@
+{% do view.registerCssFile("/css/pages/about.css") %}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "inverted" : false } %}
+
+<section class="page-intro hero">
+    <div class="content">
+
+        <img src="/images/branding/icon-white.png" class="logo-icon">
+        <h1>{{entry.headline}}</h1>
+        <div class="break small"></div>
+        <p class="lead">{{entry.body}}</p>
+
+    </div>
+</section>
+
+<section class="overview about-overview">
+    <div class="content">
+
+
+        <div class="visual">
+            {% set x = entry.coverImage.one.focalPoint | first %}
+            {% set y = entry.coverImage.one.focalPoint | last %}
+            {% set xPercent = x * 100 %}
+            {% set yPercent = y * 100 %}
+            {% set focus = xPercent ~ "% " ~ yPercent ~ "%" %}
+            <img src="{{entry.coverImage.one().url}}" style="object-position: {{focus}}">
+        </div>
+        <div class="copy">
+            <p class="caption">{{entry.caption}}</p>
+            <h2>Brett McMillin</h2>
+            <p>A New Jersey native transplanted to southern California. Brett has worked in partnership with local and global brands as creative director and designer for over a decade.</p><p>He finds inspiration in music and those who continue to find originality in life. Outside of design, he is passionate about family, science and his Queensland Heeler mix rescue, Swayze.</p>
+            <div class="break small"></div>
+            <div class="social">
+                {% if personalInfo.igHandle is defined and personalInfo.igHandle is not empty %}
+                    <a href="http://www.instagram.com/{{personalInfo.igHandle}}" target="_new">Instagram</a>
+                {% endif %}
+                {% if personalInfo.twitterHandle is defined and personalInfo.twitterHandle is not empty %}
+                    <a href="http://www.twitter.com/{{personalInfo.twitterHandle}}" target="_new">Twitter</a>
+                {% endif %}
+                {% if personalInfo.facebookHandle is defined and personalInfo.facebookHandle is not empty %}
+                    <a href="http://www.facebook.com/{{personalInfo.facebookHandle}}" target="_new">Facebook</a>
+                {% endif %}
+                {% if personalInfo.linkedinHandle is defined and personalInfo.linkedinHandle is not empty %}
+                    <a href="http://www.linkedin.com/in/{{personalInfo.linkedinHandle}}" target="_new">LinkedIn</a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="feed">
+
+    <hr>
+
+    <h3>
+        Highlight Reel
+        <a href="http://www.instagram.com/{{personalInfo.igHandle}}" target="_new" class="naked"><img src="/images/ui/logo-instagram.svg"></a>
+    </h3>
+
+    <div class="ig-grid">
+
+
+        {% set igParams = {
+            url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' ~ apiKeys.igAuthKey,
+            type: 'json',
+            element: 'data',
+            cache: 60
+        } %}
+        {% set igFeed = craft.feedme.feed(igParams) %}
+
+
+        {% for i, item in igFeed %}
+            {% if i < 12 %}
+
+                {% set imgUrl = item.images.standard_resolution.url %}
+                {% set postLink = item.link %}
+
+                <div class="grid-item">
+                    <a href="{{postLink}}" target="_new" class="naked">
+                    {% if imgUrl is defined and imgUrl is not empty %}
+                        <div class="image">
+                            <img src="{{imgUrl}}">
+                        </div>
+                    {% endif %}
+                    </a>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+    <a href="http://www.instagram.com/{{personalInfo.igHandle}}" class="button dark" target="_new">View More</a>
+
+</section>
+
+
+
+
+{% endblock %}
+
+{% do view.registerJsFile("/js/app.js") %}

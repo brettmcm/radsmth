@@ -1,0 +1,33 @@
+
+section.text-block {
+    position:relative;
+    max-width:1000px;
+    margin:7vw auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    @media screen and (min-width:$medium) {
+        flex-direction: row;
+    }
+    .leader {
+        flex:1;
+        margin-bottom:1rem;
+        @media screen and (min-width:$medium) {
+            flex:3;
+            padding-right:4rem;
+            margin-bottom:0;
+        }
+    }
+    .body {
+        flex:1;
+        max-width:700px;
+        @media screen and (min-width:$medium) {
+            flex:5;
+            &.dropped {
+                padding-top:1.5rem;
+            }
+        }
+    }
+}

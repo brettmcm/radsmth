@@ -1,0 +1,35 @@
+{# Load CSS #}
+
+{# {% do view.registerCssFile("/css/pages/home.css") %} #}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "inverted" : false } %}
+
+<section class="page-intro">
+    <div class="content">
+
+        <h1>{{entry.title}}</h1>
+        <div class="break small"></div>
+        {{entry.body}}
+
+    </div>
+</section>
+
+<section class="grid case-studies">
+
+    {% for feature in entry.entries.all() %}
+        <a href="{{feature.url}}" class="grid-item" data-block-height="100">
+            <img src="{{feature.coverImage.one().getUrl()}}">
+        </a>
+    {% endfor %}
+
+</section>
+
+
+{% endblock %}
+
+{% do view.registerJsFile("/js/app.js") %}

@@ -1,0 +1,59 @@
+@keyframes simplefade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.case-study-intro {
+  position: relative;
+  flex-direction: column; }
+  @media screen and (min-width: 768px) {
+    .case-study-intro {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end; } }
+  .case-study-intro .hero-copy {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0; }
+    @media screen and (min-width: 768px) {
+      .case-study-intro .hero-copy {
+        width: 60%;
+        padding: 0 2rem 0 0; } }
+    .case-study-intro .hero-copy .caption, .case-study-intro .hero-copy h1, .case-study-intro .hero-copy .breaker, .case-study-intro .hero-copy .desc {
+      animation: simplefade 1s forwards;
+      opacity: 0; }
+    .case-study-intro .hero-copy h1 {
+      animation-delay: 0.2s;
+      margin-bottom: 1rem; }
+    .case-study-intro .hero-copy .breaker {
+      animation-delay: 0.4s; }
+    .case-study-intro .hero-copy .desc {
+      animation-delay: 0.4s;
+      max-width: 600px; }
+  .case-study-intro .supporting-copy {
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    animation: simplefade 2s forwards;
+    animation-delay: 0.6s;
+    opacity: 0; }
+    @media screen and (min-width: 768px) {
+      .case-study-intro .supporting-copy {
+        width: 30%;
+        border-left: 2px solid #de2e00;
+        padding-left: 2rem; } }
+    .case-study-intro .supporting-copy li {
+      display: block;
+      margin-bottom: 1rem; }
+      .case-study-intro .supporting-copy li p {
+        margin: 0; }
+      .case-study-intro .supporting-copy li:last-child {
+        margin-bottom: 0; }
+      .case-study-intro .supporting-copy li .credit-list li {
+        display: inline; }
+        .case-study-intro .supporting-copy li .credit-list li:last-child .plus {
+          display: none; }
+
+/*# sourceMappingURL=feature.css.map */

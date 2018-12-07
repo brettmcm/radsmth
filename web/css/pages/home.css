@@ -1,0 +1,36 @@
+.page-intro.hero {
+  background: url("/images/big-sur.jpg") 50% 60%;
+  background-size: cover;
+  min-height: 40vw;
+  padding: calc(4rem + 4vw) 0; }
+  .page-intro.hero .content {
+    justify-content: center;
+    align-items: center; }
+    .page-intro.hero .content .logo-type {
+      width: 100%;
+      max-width: 1200px; }
+    .page-intro.hero .content .subtitle {
+      font-size: 0.75em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin: 0 0 2rem 0;
+      text-align: center; }
+
+.home-body {
+  padding: 7rem 0 4rem 0; }
+  .home-body .content {
+    align-items: flex-start;
+    max-width: 800px; }
+    .home-body .content .logo-icon {
+      width: 7vw;
+      margin-bottom: 5vw; }
+  @media screen and (min-width: 768px) {
+    .home-body {
+      align-items: center; }
+      .home-body .content {
+        align-items: center; }
+        .home-body .content p {
+          text-align: center; } }
+
+/*# sourceMappingURL=home.css.map */

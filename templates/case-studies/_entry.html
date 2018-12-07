@@ -1,0 +1,75 @@
+{# Load CSS #}
+
+{% do view.registerCssFile("/css/pages/feature.css") %}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+    {% include "components/header" with { "inverted" : false } %}
+
+    <section class="page-intro case-study-intro">
+
+        <div class="hero-copy">
+            <p class="caption dark">{{entry.title}}</p>
+            <h1 class="display dark">{{entry.headline}}</h1>
+            <div class="breaker dark"></div>
+            <p class="desc dark">{{entry.body}}</p>
+        </div>
+
+        <ul class="supporting-copy">
+            <li>
+                <p class="caption">Client</p>
+                <p>{{entry.client}}</p>
+            </li>
+            {% if entry.agency is defined and entry.agency is not empty %}
+                <li>
+                    <p class="caption">Agency</p>
+                    <p>{{entry.agency}}</p>
+                </li>
+            {% endif %}
+            {% if entry.credits is defined and entry.credits is not empty %}
+                <li>
+                    <p class="caption">Credits</p>
+                    <ul class="credit-list">
+                            {% for credit in entry.credits.all() %}
+                                <li>{{ credit }}<span class="plus"> + </span></li>
+                            {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+
+        </ul>
+
+    </section>
+
+    {% set blocks = entry.components %}
+
+    {% include "routers/matrix" with {"matrix": blocks} %}
+
+    {% set parent = craft.entries.section('caseStudies').one() %}
+
+    <section class="page-intro">
+        <div class="content">
+
+            <h1>{{parent.title}}</h1>
+            <div class="break small"></div>
+            <p>{{parent.body}}</p>
+
+        </div>
+    </section>
+
+    <section class="grid case-studies">
+
+        {% for feature in parent.entries.all() %}
+            <a href="{{feature.url}}" class="grid-item" data-block-height="100">
+                <img src="{{feature.coverImage.one().getUrl()}}">
+            </a>
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
+
+{% do view.registerJsFile("/js/app.js") %}

@@ -1,0 +1,23 @@
+{% block content %}
+
+<header>
+    <a href="{{currentSite.baseUrl}}"><img src="/images/branding/icon.svg" class="logo-type {% if inverted %}inverted{% endif %}"></a>
+    <div class="menu {% if inverted %}inverted{% endif %}">
+        <div class="line top"></div>
+        <div class="line middle"></div>
+        <div class="line bottom"></div>
+    </div>
+    <div class="nav">
+        <ul>
+            <a href="/case-studies" class="basic invert naked"><li>Case Studies</li></a>
+            <a href="/logos" class="basic invert naked"><li>Logos</li></a>
+            <a href="/services" class="basic invert naked"><li>Services</li></a>
+            <div class="break xsmall light invert naked"></div>
+            <a href="//shop.radsmth.com/" class="basic invert naked"><li>Shop</li></a>
+            <a href="/about" class="basic invert naked"><li>About</li></a>
+            <a href="mailto:brett@radsmth.com?subject=Let%27s make rad shit!" class="basic invert naked"><li>Contact</li></a>
+        </ul>
+    </div>
+</header>
+
+{% endblock %}

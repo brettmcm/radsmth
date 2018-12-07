@@ -1,0 +1,57 @@
+{# Load CSS #}
+{% includeCssFile "/css/pages/home.css" %}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "inverted" : false } %}
+
+<section class="page-intro hero">
+    <div class="content">
+
+        <img src="/images/branding/logo-type-white.png" class="logo-type">
+        <div class="break small"></div>
+        <p class="subtitle">Branding, Graphic Design & Creative Direction</p>
+        <div class="ctas">
+            <a href="/case-studies" class="button primary">View Case Studies</a>
+            <a href="/services" class="button light">View Services</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="home-body">
+    <div class="content">
+
+        <img src="/images/branding/icon.png" class="logo-icon">
+        <h2>Turnkey. No waste.</h2>
+        <p class="lead">Radsmth operates as a creative partner on any scale. Efficiency and solution-based approaches take priority to make sure that end result is what you really need without letting sensitive creative artist egos or tight budgets get in the way.</p>
+
+    </div>
+</section>
+
+<hr>
+
+{% set section = craft.entries.section('services').one() %}
+
+
+<section class="grid services home-grid">
+
+    {% for service in section.topics.all() %}
+        <div class="grid-item">
+            <h3>{{service.headline}}</h3>
+            <div class="break xsmall"></div>
+            <p class="caption">{{service.subhead}}</p>
+            <p>{{service.description}}</p>
+        </div>
+    {% endfor %}
+
+</section>
+
+
+
+
+{% endblock %}
+
+{% do view.registerJsFile("/js/app.js") %}
