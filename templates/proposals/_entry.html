@@ -1,0 +1,84 @@
+{# Load CSS #}
+
+{% do view.registerCssFile("/css/pages/proposal.css") %}
+
+
+{% extends "_layout-clean" %}
+
+{% block content %}
+
+
+<section class="page-intro proposal-intro">
+
+    <div class="hero-copy">
+        <p class="caption dark">PROPOSAL</p>
+        <h1 class="display dark">{{entry.title}}</h1>
+        <div class="breaker dark"></div>
+        <p class="desc dark">{{entry.body}}</p>
+    </div>
+
+    <ul class="supporting-copy">
+        <li>
+            <p class="caption">Status</p>
+            <p class="status {{entry.proposalStatus}}">{% switch entry.proposalStatus %}
+            {% case "estimate" %}Estimate{% case "revised" %}Revised{% case "approved" %}Approved{% endswitch %}</p>
+        </li>
+        <li>
+            <p class="caption">Last updated {{ entry.postDate|date('short') }}</p>
+        </li>
+        <li>
+            <p class="caption">Client</p>
+            <p>{% if entry.associatedClient is defined and entry.associatedClient is not null %}
+                {% for client in entry.associatedClient.all() %}
+                    {{client.title}}
+                {% endfor %}
+            {% endif %}</p>
+        </li>
+        {% if entry.agency is defined and entry.agency is not empty %}
+        <li>
+            <p class="caption">Agency</p>
+            <p>{{entry.agency}}</p>
+        </li>
+        {% endif %}
+        {% if entry.credits is defined and entry.credits is not empty %}
+        <li>
+            <p class="caption">Services</p>
+            <ul class="credit-list">
+                {% for credit in entry.credits.all() %}
+                <li>{{ credit }}<br></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endif %}
+
+    </ul>
+
+</section>
+
+{% set deliverables = entry.deliverables %}
+{% include "proposal-components/deliverables" with {"deliverables": deliverables} %}
+
+{% set milestones = entry.milestones %}
+{% include "proposal-components/milestones" with {"milestones": milestones} %}
+
+{% set blocks = entry.components %}
+{% include "routers/proposal-blocks" with {"matrix": blocks} %}
+
+{% set feeItems = entry.fee %}
+{% include "proposal-components/fee" with {"feeItems": deliverables} %}
+
+{% if entry.standardBillingTerms %}
+    {% include "proposal-components/standard-billing-terms" %}
+{% endif %}
+
+
+
+{% if entry.associatedClient is defined and entry.associatedClient is not null %}
+    {% for client in entry.associatedClient.all() %}
+        {% include "proposal-components/agree" with {"client": client} %}
+    {% endfor %}
+{% endif %}
+
+<div class="logo"><a href="/"><img src="/images/branding/logo-stack-bolts-dark.png"></a></div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% do view.registerCssFile("/css/components/proposal-overrides.css") %}
+
+{% block blockContent %}
+<section class="body text-block">
+
+    <div class="body">
+        <p>NOTE: The above fees are estimated projected costs that can increase or decrease depending on the final scope
+            and deliverables of the initiative. If scope and/or deliverable changes occur, client will be advised of such
+            billable changes in advance and will be presented with a corresponding change order for approval.</p>
+
+        <p>This proposal is valid until {{ entry.expiryDate|date('short') }}. Project may be declined or re-quoted if
+            not executed within this timeframe.</p>
+    </div>
+
+</section>
+<section class="body text-block">
+    
+    <div class="leader">
+        <h3 class="display">Billing Terms</h3>
+    </div>
+    <div class="body dropped">
+        <p>50% of project total will be billed upon approval of this statement of work. The remaining 50% of the cost will be billed upon completion of the project.</p>
+    </div>
+
+</section>
+{% endblock %}

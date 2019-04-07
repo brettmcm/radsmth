@@ -2,6 +2,7 @@ a {
     text-decoration:underline;
     color:$foreground;
     transition:color 0.2s;
+    text-align:center;
     &.invert {
         color:$background;
     }

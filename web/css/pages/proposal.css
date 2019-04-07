@@ -1,0 +1,247 @@
+.proposal-intro {
+  position: relative;
+  flex-direction: column;
+  max-width: 1000px; }
+  @media screen and (min-width: 768px) {
+    .proposal-intro {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch; } }
+  .proposal-intro .hero-copy {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0; }
+    @media screen and (min-width: 768px) {
+      .proposal-intro .hero-copy {
+        width: 60%;
+        padding: 0 2rem 0 0; } }
+    .proposal-intro .hero-copy h1 {
+      animation-delay: 0.2s;
+      margin-bottom: 1em; }
+    .proposal-intro .hero-copy .breaker {
+      animation-delay: 0.4s; }
+    .proposal-intro .hero-copy .desc {
+      animation-delay: 0.4s;
+      max-width: 600px; }
+  .proposal-intro .supporting-copy {
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    animation-delay: 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    @media screen and (min-width: 768px) {
+      .proposal-intro .supporting-copy {
+        width: 30%;
+        border-left: 2px solid #f2f2f2;
+        padding-left: 2rem; } }
+    .proposal-intro .supporting-copy li {
+      display: block;
+      margin-bottom: 1rem; }
+      .proposal-intro .supporting-copy li p {
+        margin: 0; }
+        .proposal-intro .supporting-copy li p.caption {
+          color: rgba(17, 17, 17, 0.7); }
+        .proposal-intro .supporting-copy li p.status {
+          padding: 0.25em 0.75em;
+          display: inline-block;
+          border-radius: 3px;
+          color: white; }
+          .proposal-intro .supporting-copy li p.status.estimate {
+            background: #3791fa; }
+          .proposal-intro .supporting-copy li p.status.revised {
+            background: #fa5555; }
+          .proposal-intro .supporting-copy li p.status.approved {
+            background: #55e155; }
+      .proposal-intro .supporting-copy li:last-child {
+        margin-bottom: 0; }
+      .proposal-intro .supporting-copy li .credit-list li {
+        display: inline; }
+        .proposal-intro .supporting-copy li .credit-list li:last-child .plus {
+          display: none; }
+
+.deliverables {
+  display: flex;
+  flex-direction: column; }
+  .deliverables .deliverable {
+    width: 100%;
+    margin-top: 1em;
+    padding: calc(1em + 2vw);
+    border-radius: 3px;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+    .deliverables .deliverable li {
+      margin-left: 2em; }
+
+.milestones {
+  display: flex;
+  flex-direction: column; }
+  .milestones .milestone {
+    max-width: none;
+    margin-bottom: 0.5em;
+    margin-left: 2em; }
+    .milestones .milestone:first-child {
+      margin-top: 1em; }
+
+.fee {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5em;
+  padding-bottom: 0; }
+  .fee .table-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6; }
+    .fee .table-row .deliverable, .fee .table-row .total, .fee .table-row .label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      box-sizing: border-box;
+      padding: 0.5em; }
+    .fee .table-row .deliverable, .fee .table-row .label {
+      width: 70%;
+      border-right: 1px solid #e6e6e6; }
+      .fee .table-row .deliverable .details, .fee .table-row .label .details {
+        font-size: 0.8em;
+        color: #5e5e5e; }
+    .fee .table-row .total {
+      width: 30%;
+      align-items: flex-end; }
+    @media screen and (min-width: 768px) {
+      .fee .table-row .deliverable, .fee .table-row .label {
+        width: 80%; }
+      .fee .table-row .total {
+        width: 20%; } }
+  .fee .table-title {
+    margin-top: 1em;
+    background: #111;
+    color: #fff;
+    border-left: 1px solid #111;
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+    .fee .table-title .deliverable {
+      border-right: 1px solid #2b2b2b; }
+  .fee .table-footer {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; }
+    .fee .table-footer .label {
+      align-items: flex-end;
+      text-transform: uppercase;
+      padding-right: 1em; }
+
+.agree {
+  margin-top: 2.5em;
+  width: 100%;
+  max-width: 1000px;
+  padding: calc(1em + 2vw);
+  background: white;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */ }
+  .agree .container {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 60px;
+    cursor: pointer;
+    font-size: 0.9em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 2em; }
+  .agree .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+  .agree .checkmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background: white;
+    border-radius: 100%;
+    border: 1px solid #dedede;
+    transition: border 0.1s, background 0.1s; }
+  @media screen and (min-width: 768px) {
+    .agree .container:hover input ~ .checkmark {
+      background: #dedede;
+      border: 1px solid #dedede; } }
+  .agree .container input:checked ~ .checkmark {
+    background-color: #55e155;
+    border: 1px solid #55e155; }
+  .agree .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+  .agree .container input:checked ~ .checkmark:after {
+    display: block; }
+  @media screen and (min-width: 768px) {
+    .agree .container input:hover ~ .checkmark:after {
+      display: block; } }
+  .agree .container .checkmark:after {
+    left: 12px;
+    top: 7px;
+    width: 7px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .agree .submit {
+    width: 100%; }
+    .agree .submit .button {
+      width: 100%;
+      margin: 0;
+      white-space: nowrap; }
+  @media screen and (min-width: 768px) {
+    .agree {
+      flex-direction: row;
+      align-items: center; }
+      .agree .container {
+        padding-right: 3em;
+        margin-bottom: 0; }
+      .agree .submit {
+        width: auto; } }
+
+.logo {
+  width: 100%;
+  padding: calc(3em + 4vw) 0 calc(3em + 13vw) 0;
+  text-align: center;
+  background-image: linear-gradient(#fff, white); }
+  .logo img {
+    width: 100px; }
+
+/*# sourceMappingURL=proposal.css.map */

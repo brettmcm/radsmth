@@ -1,0 +1,13 @@
+section.text-block {
+  margin: calc(1em + 2vw) auto;
+  width: 90%;
+  max-width: 1000px;
+  flex-direction: column; }
+  section.text-block .leader, section.text-block .body {
+    width: 100%;
+    max-width: none; }
+    section.text-block .leader p, section.text-block .body p {
+      width: 100%;
+      max-width: none; }
+
+/*# sourceMappingURL=proposal-overrides.css.map */

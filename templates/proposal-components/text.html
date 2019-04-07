@@ -1,0 +1,19 @@
+{% do view.registerCssFile("/css/components/proposal-overrides.css") %}
+
+{% block blockContent %}
+<section class="body text-block">
+
+    {% if block.headline is defined and block.headline is not empty %}
+    <div class="leader">
+        <h3 class="display">{{ block.headline }}</h3>
+    </div>
+    {% endif %}
+    <div class="body {% if block.headline is defined and block.headline is not empty %}dropped{% endif %}">
+        {{ block.body }}
+        {% if block.ender %}
+        <div class="break xsmall dark"></div>
+        {% endif %}
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% block blockContent %}
+<section class="body text-block">
+
+    <div class="leader">
+        <h3 class="display">Deliverables</h3>
+    </div>
+
+    <div class="body dropped deliverables">
+
+        {% for deliverable in deliverables.all() %}
+            
+            <div class="deliverable">
+                <h4>{{deliverable.deliverableTitle}}</h4>
+                <p>{{deliverable.description}}</p>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
