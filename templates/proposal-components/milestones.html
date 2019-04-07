@@ -1,0 +1,24 @@
+
+{% block blockContent %}
+
+<section class="body text-block">
+
+    <div class="leader">
+        <h3 class="display">Milestones</h3>
+    </div>
+
+    <ul class="body dropped milestones">
+
+        {% for milestone in milestones.all() %}
+        
+            <li class="milestone">
+                {{milestone.description}} {% if milestone.date is defined and milestone.date is not null %} - <b>{{milestone.date|date('short')}}</b>{% endif %}
+            </li>
+        
+        {% endfor %}
+
+    </ul>
+
+</section>
+
+{% endblock %}

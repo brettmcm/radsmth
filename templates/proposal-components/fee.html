@@ -1,0 +1,39 @@
+{% block blockContent %}
+<section class="body text-block">
+
+    <div class="leader">
+        <h3 class="display">Fee</h3>
+    </div>
+
+    <div class="body fee">
+
+        <div class="table-title table-row">
+            <div class="deliverable">Deliverable</div>
+            <div class="total">Fee</div>
+        </div>
+
+        {% set grandTotal = 0 %}
+        {% for item in feeItems.all() %}
+
+            {% set fee = item.fee %}
+            {% set grandTotal = grandTotal + fee %}
+
+            <div class="line-item table-row">
+                <div class="deliverable">
+                    <div class="title">{{item.deliverableTitle}}</div>
+                </div>
+                <div class="total">{{fee|currency('USD')}}</div>
+            </div>
+
+        {% endfor %}
+
+        <div class="table-footer table-row">
+            <div class="label"><b>Total</b></div>
+            <div class="total">{{ grandTotal|currency('USD') }}</div>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

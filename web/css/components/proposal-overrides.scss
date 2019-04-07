@@ -1,0 +1,19 @@
+
+@import "framework/variables";
+
+section {
+    &.text-block {
+        margin: calc(1em + 2vw) auto;
+        width: 90%;
+        max-width: 1000px;
+        flex-direction: column;
+        .leader, .body {
+            width: 100%;
+            max-width: none;
+            p {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAII,kBAAa;EACT,MAAM,EAAE,oBAAoB;EAC5B,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,MAAM;EACjB,cAAc,EAAE,MAAM;EACtB,oDAAe;IACX,KAAK,EAAE,IAAI;IACX,SAAS,EAAE,IAAI;IACf,wDAAE;MACE,KAAK,EAAE,IAAI;MACX,SAAS,EAAE,IAAI",
+"sources": ["proposal-overrides.scss"],
+"names": [],
+"file": "proposal-overrides.css"
+}
