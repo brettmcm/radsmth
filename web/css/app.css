@@ -113,7 +113,7 @@ a {
     box-sizing: border-box;
     padding: 0.6rem 0.8rem;
     border-radius: 2px;
-    transition: color 0.2s, background-color 0.2s;
+    transition: color 0.1s, background-color 0.1s, transform 1s, box-shadow 1s;
     z-index: 1; }
     a.button .icon {
       margin-right: 0.5rem;
@@ -146,14 +146,17 @@ a {
     a.button.light {
       background-color: rgba(255, 255, 255, 0.8);
       color: #111; }
-    a.button:hover.primary:before {
-      opacity: 1; }
-    a.button:hover.dark {
-      background-color: #111;
-      color: #fff; }
-    a.button:hover.light {
-      background-color: #fff;
-      color: #111; }
+    a.button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2); }
+      a.button:hover.primary:before {
+        opacity: 1; }
+      a.button:hover.dark {
+        background-color: #111;
+        color: #fff; }
+      a.button:hover.light {
+        background-color: #fff;
+        color: #111; }
     @media screen and (min-width: 414px) {
       a.button.invert-sm.dark {
         background-color: #fff;
