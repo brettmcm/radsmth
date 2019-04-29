@@ -3,3 +3,4 @@
 /vendor
 /web/auth
 .DS_Store
+/scripts/.env.sh

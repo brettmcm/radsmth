@@ -29,7 +29,7 @@ GLOBAL_DB_DRIVER="mysql"
 # -- LOCAL settings --
 
 # Local path constants; paths should always have a trailing /
-LOCAL_ROOT_PATH="/Users/brettmcmillin/Sites/uncommon/"
+LOCAL_ROOT_PATH="/Users/brettmcmillin/Sites/radsmth/"
 LOCAL_ASSETS_PATH=${LOCAL_ROOT_PATH}"web/images"
 
 # Local user & group that should own the Craft CMS install
@@ -66,7 +66,7 @@ LOCAL_FASTCGI_CACHE_DIR=""
 LOCAL_REDIS_DB_ID=""
 
 # Local database constants; default port for mysql is 3306, default port for postgres is 5432
-LOCAL_DB_NAME="db_stance_local"
+LOCAL_DB_NAME="raddb"
 LOCAL_DB_PASSWORD="root"
 LOCAL_DB_USER="root"
 LOCAL_DB_HOST="localhost"
