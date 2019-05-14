@@ -22,7 +22,13 @@
                 <div class="deliverable">
                     <div class="title">{{item.deliverableTitle}}</div>
                 </div>
-                <div class="total">{{fee|currency('USD')}}</div>
+                <div class="total">
+                    {% if fee is defined and fee is not null %}
+                        {{fee|currency('USD')}}
+                    {% else %}
+                        <i>TBD</i>
+                    {% endif %}
+                </div>
             </div>
 
         {% endfor %}
