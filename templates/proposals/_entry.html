@@ -73,7 +73,7 @@
 
 
 
-{% if entry.associatedClient is defined and entry.associatedClient is not null %}
+{% if entry.associatedClient is defined and entry.associatedClient is not null and entry.standardBillingTerms %}
     {% for client in entry.associatedClient.all() %}
         {% include "proposal-components/agree" with {"client": client} %}
     {% endfor %}
