@@ -3,6 +3,8 @@
 
 {% extends "_layout" %}
 
+{% block content %}
+
 <script type="application/ld+json">
 { "@context" : "http://schema.org",
   "@type" : "Organization",
@@ -17,8 +19,6 @@
       "areaServed" : "US"
     } ] }
 </script>
-
-{% block content %}
 
 {% include "components/header" with { "inverted" : false } %}
 
