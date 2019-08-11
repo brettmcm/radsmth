@@ -3,6 +3,21 @@
 
 {% extends "_layout" %}
 
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "url" : "http://www.radsmth.com",
+  "logo" : "http://www.radsmth.com/images/branding/logo-stack-bolts.png",
+  "makesOffer" : "Branding, Graphic Design, Creative Direction",
+  "contactPoint" : [
+    { "@type" : "ContactPoint",
+      "url" : "http://www.radsmth.com",
+      "email" : "info@radsmth.com",
+      "contactType" : "Customer Service",
+      "areaServed" : "US"
+    } ] }
+</script>
+
 {% block content %}
 
 {% include "components/header" with { "inverted" : false } %}
